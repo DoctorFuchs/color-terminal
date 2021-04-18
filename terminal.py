@@ -11,8 +11,8 @@ class terminal:
         self.options = ["python3 <file>", "python <file>", "apt", "pip3", "pip", "git", "ls", "cd"]
 
     def getUser(self):
-        # return os.environ["USER"]
-        return "root"
+        return os.environ["USER"]
+
 
     def getVisiblePath(self):
         # replace pwd path if you are at HOME
@@ -78,9 +78,7 @@ class terminal:
                 return output.stderr.read().decode("utf-8")
 
     def getBeforeInput(self):
-        # return f"{self.getUser()}@{socket.gethostbyname(socket.gethostname())}  {self.getVisiblePath()} % "
-
-        return f"root@localhost  {self.getVisiblePath()}"
+        return f"{self.getUser()}@{socket.gethostbyname(socket.gethostname())}  {self.getVisiblePath()} % "
 
     def getRecentHTML(self):
         # print the history (in html)
